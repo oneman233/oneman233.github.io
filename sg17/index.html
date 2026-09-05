@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a2b">
+  <meta name="description" content="独立制作的 ITU-T Study Group 17 科普与工作导览：了解网络安全、数字身份、AI安全、量子安全及国际标准如何形成。">
+  <meta name="robots" content="index,follow">
+  <title>走近 ITU-T SG17｜安全、信任与国际标准</title>
+  <link rel="canonical" href="https://oneman233.github.io/sg17/">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">跳到主要内容</a>
+
+  <header class="site-header" aria-label="网站页眉">
+    <a class="wordmark" href="#top" aria-label="SG17 Explainer 首页">
+      <span class="wordmark-mark" aria-hidden="true">17</span>
+      <span>
+        <strong>SG17 Explainer</strong>
+        <small data-i18n="independent">独立科普原型 · 非ITU官方网站</small>
+      </span>
+    </a>
+
+    <nav class="top-nav" aria-label="页内导航">
+      <a href="#work" data-i18n="navWork">现行工作</a>
+      <a href="#learn" data-i18n="navLearn">零基础科普</a>
+      <a href="#process" data-i18n="navProcess">标准如何形成</a>
+      <a href="#sources" data-i18n="navSources">官方来源</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="language-switch" type="button" id="languageSwitch" aria-label="Switch to English">
+        <span class="language-switch-track" aria-hidden="true"><span></span></span>
+        <span id="languageLabel">EN</span>
+      </button>
+      <button class="menu-button" type="button" id="menuButton" aria-expanded="false" aria-controls="mobileNav">
+        <span class="sr-only" data-i18n="openMenu">打开导航</span>
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="移动端页内导航" hidden>
+      <a href="#work" data-i18n="navWork">现行工作</a>
+      <a href="#learn" data-i18n="navLearn">零基础科普</a>
+      <a href="#process" data-i18n="navProcess">标准如何形成</a>
+      <a href="#sources" data-i18n="navSources">官方来源</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">ITU-T STUDY GROUP 17 · SECURITY</p>
+        <h1 data-i18n="heroTitle">让数字世界<br><em>值得信任</em></h1>
+        <p class="hero-lead" data-i18n="heroLead">SG17把来自各国政府、企业和专家的技术经验，转化为可共同使用的安全与信任标准。从AI智能体到数字身份，从网络防御到量子时代，它研究的是同一个问题：我们怎样放心地连接、验证和协作？</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">
+            <span data-i18n="exploreWork">查看现行工作</span><span aria-hidden="true">↓</span>
+          </a>
+          <a class="button button-secondary" href="https://www.itu.int/en/ITU-T/studygroups/2025-2028/17/Pages/default.aspx" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="officialHome">访问SG17官方主页</span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p class="verified"><span class="status-dot" aria-hidden="true"></span><span data-i18n="verified">内容核验日期：2026年9月5日</span></p>
+      </div>
+
+      <figure class="trust-map" aria-labelledby="trustMapCaption">
+        <div class="radar-grid" aria-hidden="true">
+          <span class="ring ring-one"></span>
+          <span class="ring ring-two"></span>
+          <span class="ring ring-three"></span>
+          <span class="radar-line"></span>
+          <span class="axis axis-x"></span>
+          <span class="axis axis-y"></span>
+        </div>
+        <div class="trust-core">
+          <small data-i18n="trustCoreSmall">共同目标</small>
+          <strong data-i18n="trustCore">安全与信任</strong>
+        </div>
+        <div class="orbit-label orbit-ai"><b>AI</b><span data-i18n="orbitAI">智能体与模型</span></div>
+        <div class="orbit-label orbit-id"><b>ID</b><span data-i18n="orbitID">身份与权限</span></div>
+        <div class="orbit-label orbit-data"><b>DATA</b><span data-i18n="orbitData">数据与隐私</span></div>
+        <div class="orbit-label orbit-net"><b>NET</b><span data-i18n="orbitNet">网络与服务</span></div>
+        <figcaption id="trustMapCaption" data-i18n="trustCaption">SG17关注的对象不同，但核心是让身份、数据、系统和行为能够被验证、保护和追责。</figcaption>
+      </figure>
+    </section>
+
+    <section class="mission-strip" aria-label="SG17使命摘要">
+      <p data-i18n="missionLabel">SG17的使命</p>
+      <blockquote data-i18n="missionQuote">制定国际标准，增强人们使用电信与信息通信技术时的信心、安全与信任。</blockquote>
+      <a href="https://www.itu.int/en/ITU-T/about/groups/2025-2028/Pages/sg17.aspx" target="_blank" rel="noopener noreferrer"><span data-i18n="readMandate">阅读官方职责说明</span> ↗</a>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="workEyebrow">2025–2028 STUDY PERIOD</p>
+          <h2 data-i18n="workTitle">SG17现在研究什么？</h2>
+        </div>
+        <p data-i18n="workIntro">下面是面向公众的工作地图，不是全部工作项清单。状态来自ITU官方研究组结构、工作计划和2026年6月会议摘要。</p>
+      </div>
+
+      <div class="snapshot" aria-label="2026年6月会议工作快照">
+        <div class="snapshot-label">
+          <span data-i18n="snapshotTitle">2026年6月会议快照</span>
+          <small data-i18n="snapshotNote">数字仅代表该次会议输出</small>
+        </div>
+        <div class="snapshot-stat"><strong>56</strong><span data-i18n="snapshotOutputs">项标准化输出</span></div>
+        <div class="snapshot-stat"><strong>71</strong><span data-i18n="snapshotNewItems">个新工作项</span></div>
+        <div class="snapshot-stat"><strong>13</strong><span data-i18n="snapshotMembers">个WTSA-24后新增成员</span></div>
+        <a href="https://www.itu.int/en/ITU-T/studygroups/2025-2028/17/Pages/Jun26-summary.aspx" target="_blank" rel="noopener noreferrer" aria-label="查看2026年6月SG17会议摘要">↗</a>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="按主题筛选工作">
+        <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true" data-i18n="filterAll">全部</button>
+        <button class="filter-chip" type="button" data-filter="ai" aria-pressed="false">AI</button>
+        <button class="filter-chip" type="button" data-filter="identity" aria-pressed="false" data-i18n="filterIdentity">身份</button>
+        <button class="filter-chip" type="button" data-filter="network" aria-pressed="false" data-i18n="filterNetwork">网络</button>
+        <button class="filter-chip" type="button" data-filter="quantum" aria-pressed="false" data-i18n="filterQuantum">量子</button>
+        <button class="filter-chip" type="button" data-filter="privacy" aria-pressed="false" data-i18n="filterPrivacy">隐私</button>
+      </div>
+
+      <div class="work-grid" id="workGrid" aria-live="polite"></div>
+
+      <div class="working-parties">
+        <div class="wp-intro">
+          <p class="eyebrow">4 WORKING PARTIES</p>
+          <h3 data-i18n="wpTitle">四个工作组，覆盖从基础信任到具体应用</h3>
+          <p data-i18n="wpIntro">Working Party（WP）像四个相互协作的专题区，每个专题区下面再设若干Question持续研究具体问题。</p>
+          <a class="text-link" href="https://www.itu.int/net4/ITU-T/lists/sgstructure.aspx?Group=17&amp;Period=18" target="_blank" rel="noopener noreferrer"><span data-i18n="viewStructure">查看官方组织结构</span> ↗</a>
+        </div>
+        <ol class="wp-list">
+          <li><span>WP1/17</span><b data-i18n="wp1">数字身份、安全管理、量子安全、PKI与基础安全技术</b></li>
+          <li><span>WP2/17</span><b data-i18n="wp2">移动通信、物联网、元宇宙及智能交通安全</b></li>
+          <li><span>WP3/17</span><b data-i18n="wp3">可信、安全战略与跨组织协调</b></li>
+          <li><span>WP4/17</span><b data-i18n="wp4">AI、云计算、大数据基础设施、服务与应用安全</b></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section learn-section" id="learn">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="learnEyebrow">NO TECHNICAL BACKGROUND REQUIRED</p>
+          <h2 data-i18n="learnTitle">六个概念，读懂SG17</h2>
+        </div>
+        <p data-i18n="learnIntro">点击卡片查看“为什么与你有关”。这些解释用于科普，正式定义请以ITU-T Recommendation和工作文件为准。</p>
+      </div>
+
+      <div class="concept-grid" id="conceptGrid"></div>
+
+      <aside class="analogy-panel">
+        <div class="analogy-visual" aria-hidden="true">
+          <div class="passport-card"><span>01</span><b>ID</b><i></i></div>
+          <div class="key-line"></div>
+          <div class="service-gate"><i></i><i></i><i></i></div>
+        </div>
+        <div>
+          <p class="eyebrow" data-i18n="analogyEyebrow">ONE SIMPLE ANALOGY</p>
+          <h3 data-i18n="analogyTitle">数字身份，就像“可验证的数字护照”</h3>
+          <p data-i18n="analogyBody">现实中的护照把“人”和“身份声明”绑定起来；数字证书和凭证尝试在网络中完成类似工作。区别是，网络还必须处理机器、服务和AI智能体，并明确它们被允许做什么、谁授权、何时撤销。</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section process-section" id="process">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="processEyebrow">FROM A PROBLEM TO A RECOMMENDATION</p>
+          <h2 data-i18n="processTitle">国际标准是怎样形成的？</h2>
+        </div>
+        <p data-i18n="processIntro">这是一张面向公众的简化流程图。真实流程会因文件类型、AAP/TAP批准程序和会议决定而有所不同。</p>
+      </div>
+
+      <ol class="process-flow">
+        <li>
+          <span>01</span>
+          <div><b data-i18n="step1Title">发现共同问题</b><p data-i18n="step1Body">成员提出风险、使用场景或互操作需求。</p></div>
+        </li>
+        <li>
+          <span>02</span>
+          <div><b data-i18n="step2Title">提交技术文稿</b><p data-i18n="step2Body">贡献者提供需求、术语、架构或测试证据。</p></div>
+        </li>
+        <li>
+          <span>03</span>
+          <div><b data-i18n="step3Title">在Question与WP讨论</b><p data-i18n="step3Body">专家审查假设、发现分歧并修改文本。</p></div>
+        </li>
+        <li>
+          <span>04</span>
+          <div><b data-i18n="step4Title">逐步形成共识</b><p data-i18n="step4Body">把不同观点转化为各方可接受、可实施的要求。</p></div>
+        </li>
+        <li>
+          <span>05</span>
+          <div><b data-i18n="step5Title">批准与发布</b><p data-i18n="step5Body">草案依适用程序完成同意、确定或批准。</p></div>
+        </li>
+        <li>
+          <span>06</span>
+          <div><b data-i18n="step6Title">实施并持续演进</b><p data-i18n="step6Body">组织应用标准，反馈又推动修订和新工作。</p></div>
+        </li>
+      </ol>
+
+      <div class="standard-is-not">
+        <h3 data-i18n="notTitle">标准是什么，也不是什么</h3>
+        <div>
+          <p><span aria-hidden="true">✓</span><b data-i18n="is1">共同技术语言</b><small data-i18n="is1Detail">让不同国家和组织可以一致讨论、建设与评估。</small></p>
+          <p><span aria-hidden="true">✓</span><b data-i18n="is2">可复用的国际共识</b><small data-i18n="is2Detail">把一次项目经验转化为更多参与者可使用的方法。</small></p>
+          <p><span aria-hidden="true">≠</span><b data-i18n="not1">某一家公司的产品说明</b><small data-i18n="not1Detail">标准尽量保持技术中立，不为单一产品背书。</small></p>
+          <p><span aria-hidden="true">≠</span><b data-i18n="not2">自动具有强制力的法律</b><small data-i18n="not2Detail">是否强制实施取决于各地法律、合同和政策环境。</small></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section share-section" id="share">
+      <div>
+        <p class="eyebrow" data-i18n="shareEyebrow">TURN LEARNING INTO OUTREACH</p>
+        <h2 data-i18n="shareTitle">把SG17介绍给更多人</h2>
+        <p data-i18n="shareIntro">复制一段简短介绍，用于LinkedIn、X或其他专业社区。分享前可按你的受众调整措辞。</p>
+      </div>
+      <div class="share-card">
+        <p id="shareText" data-i18n="shareText">SG17把AI智能体、数字身份、网络防御、隐私与量子安全等快速变化的问题，转化为可共同实施的国际技术共识。我制作了这份独立科普页面，帮助没有技术背景的读者理解SG17正在做什么，以及这些标准为什么与每个人有关。</p>
+        <div class="share-actions">
+          <button class="button button-primary" type="button" id="copyShare"><span data-i18n="copyText">复制介绍</span></button>
+          <button class="button button-secondary" type="button" id="nativeShare"><span data-i18n="shareButton">分享页面</span></button>
+          <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sources-section" id="sources">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="sourcesEyebrow">FOLLOW THE PRIMARY SOURCES</p>
+          <h2 data-i18n="sourcesTitle">继续阅读官方资料</h2>
+        </div>
+        <p data-i18n="sourcesIntro">标准化工作持续变化。准备引用工作项或状态时，请回到ITU官方页面核对最新版本。</p>
+      </div>
+      <div class="source-list">
+        <a href="https://www.itu.int/en/ITU-T/studygroups/2025-2028/17/Pages/default.aspx" target="_blank" rel="noopener noreferrer">
+          <span>01</span><b data-i18n="source1">SG17官方主页</b><small data-i18n="source1Detail">新闻、会议、入门指南与工作资源</small><i aria-hidden="true">↗</i>
+        </a>
+        <a href="https://www.itu.int/en/ITU-T/about/groups/2025-2028/Pages/sg17.aspx" target="_blank" rel="noopener noreferrer">
+          <span>02</span><b data-i18n="source2">SG17职责与研究范围</b><small data-i18n="source2Detail">了解研究组为什么存在、覆盖哪些领域</small><i aria-hidden="true">↗</i>
+        </a>
+        <a href="https://www.itu.int/net4/ITU-T/lists/sgstructure.aspx?Group=17&amp;Period=18" target="_blank" rel="noopener noreferrer">
+          <span>03</span><b data-i18n="source3">2025–2028组织结构</b><small data-i18n="source3Detail">Working Parties、Questions与区域组</small><i aria-hidden="true">↗</i>
+        </a>
+        <a href="https://www.itu.int/ITU-T/workprog/wp_search.aspx?sg=17" target="_blank" rel="noopener noreferrer">
+          <span>04</span><b data-i18n="source4">SG17工作计划数据库</b><small data-i18n="source4Detail">查询工作项、状态、目标时间和合作关系</small><i aria-hidden="true">↗</i>
+        </a>
+        <a href="https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/default.aspx" target="_blank" rel="noopener noreferrer">
+          <span>05</span><b data-i18n="source5">FG-TIDA焦点组</b><small data-i18n="source5Detail">人类与代理式AI的信任与身份</small><i aria-hidden="true">↗</i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>SG17 Explainer</strong>
+      <p data-i18n="footerDisclaimer">本页为个人独立制作的教育与宣传原型，与ITU无隶属或授权关系。事实性内容链接至ITU官方来源；如有不一致，以官方材料为准。</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://oneman233.github.io/" data-i18n="backBlog">返回HaoranDeng的博客</a>
+      <a href="#top" data-i18n="backTop">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
