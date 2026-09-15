@@ -365,142 +365,255 @@ const concepts = [
   }
 ];
 
-let currentLanguage = localStorage.getItem("sg17-language") === "en" ? "en" : "zh";
+// Shared translations are also used by the static HTML build.
+Object.assign(translations.zh, {
+ heroLead: 'SG17汇集各国专家，为数字身份、AI与网络安全制定共同标准。让我们放心地连接、验证和协作。',
+ trustCaption:'点击一个主题，探索SG17如何保护你的数字生活。',
+ learnIntro:'展开“为什么与你有关”，看看这些概念如何影响日常生活。正式定义请以ITU-T建议书和工作文件为准。',
+ shareText:'这份独立制作的SG17科普页面，用互动演示介绍AI安全、数字身份、网络防御与国际标准。无需技术背景，也能了解安全与信任为什么与我们每个人有关。',
+ navDemo:'互动体验', demoEyebrow:'TRY IT · SEE WHY TRUST MATTERS', demoTitle:'AI能做，不代表它被允许做。',
+ demoIntro:'假设你只授权AI助手查看日程。分别试试下面两个请求，看看权限检查会怎样处理。',
+ demoNote:'简化概念演示；不会连接你的日历或执行真实付款。',
+ demoRead:'查看日程',demoPay:'尝试付款',demoAgent:'AI助手',demoGate:'身份与权限检查',demoService:'你的数字服务',
+ demoIdle:'选择一个请求，观察它能否通过。', demoIdentity:'① 验证身份：这是你授权的AI助手。',
+ demoChecking:'② 核对权限：这个请求是否在授权范围内？',
+ demoAllowed:'✓ 允许查看日程。身份已验证，请求也在授权范围内。',
+ demoBlocked:'× 付款被拦截。身份是真的，但付款权限并未授予。',
+ demoTakeaway:'信任需要边界：确认“是谁”，还要检查“允许做什么”。',
+ request:'请求', gateReady:'等待请求',gateCheck:'检查中',gateAllow:'允许',gateDeny:'拒绝',
+ processPlay:'播放形成过程',processPause:'暂停',processReset:'重新开始',processHint:'点击步骤查看；也可以播放，观察共识逐步形成。',
+ visitorsTitle:'一起走近数字信任',visitorsLabel:'本页累计访客（估算）',viewsLabel:'本页累计浏览次数',
+ analyticsNote:'从接入统计起累计，中英文合并。访客按统计服务规则去重，设备或网络变化可能影响结果。',
+ analyticsDisclosure:'统计说明',analyticsDetail:'本页使用第三方不蒜子统计（soxft）。浏览器会向服务发送页面地址和访问请求，并在本机保存服务返回的去重标识；服务可接收到IP地址与浏览器信息。',
+ analyticsLoading:'正在获取统计…',analyticsError:'统计暂时不可用',analyticsPreview:'上线后开始统计',analyticsReady:'已更新',
+ copyLink:'复制链接', copiedLink:'链接已复制',copiedShare:'介绍和链接已复制',copyManual:'自动复制不可用，请复制下方内容。',
+ manualLabel:'可手动复制的内容',motionPause:'暂停动效',motionResume:'开启动效',
+ headerLabel:'网站页眉',homeLabel:'SG17 Explainer 首页',navLabel:'页内导航',mobileNavLabel:'移动端页内导航',missionLabelA11y:'SG17使命摘要',snapshotLabel:'2026年6月会议工作快照',snapshotLinkLabel:'查看2026年6月SG17会议摘要',filterLabel:'按主题筛选工作',
+ openMenu:'打开导航',closeMenu:'关闭导航',workCount:'个相关主题',allCount:'个研究主题',
+ readFocus:'访问焦点组',readStructure:'查看研究组结构',readRec:'阅读建议书',readScope:'查看职责范围',
+ statusPrefix:'状态',typePrefix:'方向',themeAI:'人工智能',themeIdentity:'数字身份',themeNetwork:'网络防御',themeQuantum:'量子安全',themePrivacy:'数据隐私'
+});
+Object.assign(translations.en, {
+ heroTitle:'Making digital life<br><em>worthy of trust.</em>',heroLead:'SG17 brings experts together to build shared standards for digital identity, AI and cybersecurity. So we can connect, verify and collaborate with confidence.',
+ trustCaption:'Choose a topic to explore how SG17 protects our digital lives.',
+ learnIntro:'Expand “Why does it matter?” to connect each concept with everyday life. Refer to ITU-T Recommendations and working documents for formal definitions.',
+ shareText:'Explore SG17 through an independent, interactive guide to AI security, digital identity, cyber defence and international standards. No technical background needed: discover why security and trust matter to all of us.',
+ navDemo:'Try it',demoEyebrow:'TRY IT · SEE WHY TRUST MATTERS',demoTitle:'Capability is not permission.',
+ demoIntro:'Imagine your AI assistant only has permission to read your calendar. Try these two requests and watch the permission check.',
+ demoNote:'A simplified demonstration. No real calendar access or payment takes place.',
+ demoRead:'Read calendar',demoPay:'Try a payment',demoAgent:'AI assistant',demoGate:'Identity & permission check',demoService:'Your digital services',
+ demoIdle:'Choose a request to see whether it can pass.',demoIdentity:'1. Verify identity: this is the AI assistant you authorized.',
+ demoChecking:'2. Check permission: is this request within the agreed scope?',
+ demoAllowed:'✓ Calendar access allowed. The identity is verified and the request is within scope.',
+ demoBlocked:'× Payment blocked. The identity is valid, but payment permission was never granted.',
+ demoTakeaway:'Trust needs boundaries: check who is acting AND what they may do.',
+ request:'Request',gateReady:'Ready',gateCheck:'Checking',gateAllow:'Allowed',gateDeny:'Blocked',
+ processPlay:'Play the journey',processPause:'Pause',processReset:'Start again',processHint:'Select a step, or play the journey to see consensus take shape.',
+ visitorsTitle:'Exploring digital trust, together',visitorsLabel:'Page visitors (estimated)',viewsLabel:'Page views',
+ analyticsNote:'Counted since integration, across both languages. Visitors are deduplicated by the provider; device or network changes may affect the estimate.',
+ analyticsDisclosure:'About these counts',analyticsDetail:'This page uses third-party Busuanzi analytics (soxft). Your browser sends the page address and a visit request, and stores a provider-issued identifier locally. The service receives your IP address and browser information.',
+ analyticsLoading:'Fetching counts…',analyticsError:'Statistics temporarily unavailable',analyticsPreview:'Counting starts after deployment',analyticsReady:'Updated',
+ copyLink:'Copy link',copiedLink:'Link copied',copiedShare:'Introduction and link copied',copyManual:'Automatic copying is unavailable. Copy the text below.',manualLabel:'Text to copy manually',
+ motionPause:'Pause motion',motionResume:'Enable motion',headerLabel:'Site header',homeLabel:'SG17 Explainer home',navLabel:'On this page',mobileNavLabel:'Mobile navigation',missionLabelA11y:'SG17 mission summary',snapshotLabel:'June 2026 meeting snapshot',snapshotLinkLabel:'Read the June 2026 SG17 meeting summary',filterLabel:'Filter work by topic',openMenu:'Open navigation',closeMenu:'Close navigation',
+ workCount:'matching topics',allCount:'research topics',readFocus:'Visit the focus group',readStructure:'View the group structure',readRec:'Read the Recommendation',readScope:'Read the mandate',statusPrefix:'Status',typePrefix:'Focus',themeAI:'Artificial intelligence',themeIdentity:'Digital identity',themeNetwork:'Cyber defence',themeQuantum:'Quantum security',themePrivacy:'Data privacy'
+});
 
-function applyLanguage(language) {
-  currentLanguage = language;
-  const dictionary = translations[language];
-  document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
-  document.documentElement.dataset.lang = language;
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.dataset.i18n;
-    if (!(key in dictionary)) return;
-    if (key === "heroTitle") element.innerHTML = dictionary[key];
-    else element.textContent = dictionary[key];
-  });
-  document.title = language === "zh"
-    ? "走近 ITU-T SG17｜安全、信任与国际标准"
-    : "Explore ITU-T SG17 | Security, trust and international standards";
-  document.querySelector('meta[name="description"]').content = language === "zh"
-    ? "独立制作的 ITU-T Study Group 17 科普与工作导览：了解网络安全、数字身份、AI安全、量子安全及国际标准如何形成。"
-    : "An independent public explainer for ITU-T Study Group 17: cybersecurity, digital identity, AI security, quantum security and how international standards develop.";
-  document.getElementById("languageLabel").textContent = language === "zh" ? "EN" : "中文";
-  document.getElementById("languageSwitch").setAttribute("aria-label", language === "zh" ? "Switch to English" : "切换到中文");
-  localStorage.setItem("sg17-language", language);
-  renderWorkItems(document.querySelector(".filter-chip.is-active")?.dataset.filter || "all");
-  renderConcepts();
+const topics = {
+ ai:{label:'themeAI',icon:'✦'},identity:{label:'themeIdentity',icon:'◎'},network:{label:'themeNetwork',icon:'⌁'},quantum:{label:'themeQuantum',icon:'◇'},privacy:{label:'themePrivacy',icon:'◈'}
+};
+function workLinkKey(link) {
+ if (link.includes('/focusgroups/')) return 'readFocus';
+ if (link.includes('sgstructure')) return 'readStructure';
+ if (link.includes('/rec/')) return 'readRec';
+ if (link.includes('/about/')) return 'readScope';
+ return 'readOfficial';
 }
+// RUNTIME START — build.py only evaluates the data above this boundary.
+(() => {
+ 'use strict';
+ const $ = (selector) => document.querySelector(selector);
+ const $$ = (selector) => [...document.querySelectorAll(selector)];
+ const safeStore = {
+  get(key) {try{return localStorage.getItem(key);}catch{return null;}},
+  set(key,value){try{localStorage.setItem(key,value);}catch{/* Storage is optional. */}}
+ };
+ const root = document.documentElement;
+ let lang = root.dataset.lang === 'en' ? 'en' : 'zh';
+ const t = key => translations[lang][key] || key;
+ const initialURL = new URL(location.href);
+ if (['en','zh'].includes(initialURL.searchParams.get('lang'))) lang = initialURL.searchParams.get('lang');
+ let activeFilter = initialURL.searchParams.get('topic') || 'all';
+ if (!Object.hasOwn(topics,activeFilter)) activeFilter = 'all';
+ let analyticsState = 'analyticsLoading';
+ let motion = !matchMedia('(prefers-reduced-motion: reduce)').matches && safeStore.get('sg17-motion') !== 'off';
+ let demoStage = 'demoIdle', demoResult = 'idle', demoRun = 0;
+ let step = -1, processTimer = null;
+ const timers = new Set();
 
-function renderWorkItems(activeFilter = "all") {
-  const grid = document.getElementById("workGrid");
-  grid.innerHTML = "";
-  workItems.forEach((item) => {
-    if (activeFilter !== "all" && !item.tags.includes(activeFilter)) return;
-    const article = document.createElement("article");
-    article.className = "work-card";
-    article.innerHTML = `
-      <div class="card-meta">
-        <span class="card-code">${item.code}</span>
-        <span class="card-status">${item.status[currentLanguage]}</span>
-      </div>
-      <h3>${item.title[currentLanguage]}</h3>
-      <p>${item.body[currentLanguage]}</p>
-      <a href="${item.link}" target="_blank" rel="noopener noreferrer">${translations[currentLanguage].readOfficial} ↗</a>
-    `;
-    grid.appendChild(article);
+ function writeURL(replace=false){
+  const url = new URL(location.href);
+  if(lang==='en') url.searchParams.set('lang','en'); else url.searchParams.delete('lang');
+  if(activeFilter==='all') url.searchParams.delete('topic'); else url.searchParams.set('topic',activeFilter);
+  try{history[replace?'replaceState':'pushState']({},'',url);}catch{/* file:// preview */}
+ }
+ function shareURL(){
+  const url = new URL('https://oneman233.github.io/sg17/');
+  if(lang==='en') url.searchParams.set('lang','en');
+  if(activeFilter!=='all') url.searchParams.set('topic',activeFilter);
+  if(['#work','#learn','#process','#sources','#demo'].includes(location.hash)) url.hash=location.hash;
+  return url.href;
+ }
+ function refreshLanguage(){
+  root.lang=lang==='zh'?'zh-CN':'en';root.dataset.lang=lang;
+  $$('[data-i18n]').forEach(el=>{
+   if(el.dataset.i18n==='heroTitle') el.innerHTML=t('heroTitle');
+   else el.textContent=t(el.dataset.i18n);
   });
-}
-
-function renderConcepts() {
-  const grid = document.getElementById("conceptGrid");
-  grid.innerHTML = "";
-  concepts.forEach((concept, index) => {
-    const article = document.createElement("article");
-    article.className = "concept-card";
-    const explanationId = `concept-${index + 1}`;
-    article.innerHTML = `
-      <span class="concept-number">${String(index + 1).padStart(2, "0")}</span>
-      <h3>${concept.title[currentLanguage]}</h3>
-      <p>${concept.plain[currentLanguage]}</p>
-      <button type="button" aria-expanded="false" aria-controls="${explanationId}">${translations[currentLanguage].whyItMatters} ＋</button>
-      <p class="concept-why" id="${explanationId}">${concept.why[currentLanguage]}</p>
-    `;
-    const button = article.querySelector("button");
-    button.addEventListener("click", () => {
-      const open = article.classList.toggle("is-open");
-      button.setAttribute("aria-expanded", String(open));
-      button.textContent = open
-        ? `${translations[currentLanguage].hideExplanation} −`
-        : `${translations[currentLanguage].whyItMatters} ＋`;
-    });
-    grid.appendChild(article);
+  $$('[data-i18n-aria]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.i18nAria)));
+  $$('[data-work]').forEach((el,i)=>{
+   const item=workItems[i];el.querySelector('h3').textContent=item.title[lang];
+   el.querySelector('.work-body').textContent=item.body[lang];
+   el.querySelector('.card-status').textContent=item.status[lang];
+   el.querySelector('.work-link').textContent=t(workLinkKey(item.link))+' ↗';
   });
-}
-
-document.getElementById("languageSwitch").addEventListener("click", () => {
-  applyLanguage(currentLanguage === "zh" ? "en" : "zh");
-});
-
-document.querySelectorAll(".filter-chip").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".filter-chip").forEach((item) => {
-      const active = item === button;
-      item.classList.toggle("is-active", active);
-      item.setAttribute("aria-pressed", String(active));
-    });
-    renderWorkItems(button.dataset.filter);
+  $$('[data-concept]').forEach((el,i)=>{
+   el.querySelector('h3').textContent=concepts[i].title[lang];
+   el.querySelector('.concept-plain').textContent=concepts[i].plain[lang];
+   el.querySelector('.concept-why').textContent=concepts[i].why[lang];
+   el.querySelector('summary span').textContent=t('whyItMatters');
   });
-});
+  $('#languageLabel').textContent=lang==='zh'?'EN':'中文';
+  $('#languageSwitch').setAttribute('aria-label',lang==='zh'?'Switch to English':'切换到中文');
 
-const menuButton = document.getElementById("menuButton");
-const mobileNav = document.getElementById("mobileNav");
-menuButton.addEventListener("click", () => {
-  const open = menuButton.getAttribute("aria-expanded") !== "true";
-  menuButton.setAttribute("aria-expanded", String(open));
-  mobileNav.hidden = !open;
-});
-
-mobileNav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileNav.hidden = true;
-    menuButton.setAttribute("aria-expanded", "false");
-  });
-});
-
-async function copyShareText() {
-  const text = document.getElementById("shareText").textContent.trim();
-  const status = document.getElementById("copyStatus");
-  try {
-    await navigator.clipboard.writeText(text);
-    status.textContent = translations[currentLanguage].copied;
-  } catch (error) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.setAttribute("readonly", "");
-    textarea.style.position = "fixed";
-    textarea.style.opacity = "0";
-    document.body.appendChild(textarea);
-    textarea.select();
-    const copied = document.execCommand("copy");
-    textarea.remove();
-    status.textContent = copied ? translations[currentLanguage].copied : translations[currentLanguage].copyFailed;
+  document.title=lang==='zh'?'走近 ITU-T SG17｜安全、信任与国际标准':'Explore ITU-T SG17 | Security, trust and international standards';
+  $('meta[name="description"]').content=t('heroLead');
+  $('link[rel="canonical"]').href='https://oneman233.github.io/sg17/';
+  for(const [key,value] of Object.entries({'og:title':document.title,'og:description':t('heroLead'),'og:url':$('link[rel="canonical"]').href,'og:locale':lang==='en'?'en_US':'zh_CN'})){
+   const meta=$(`meta[property="${key}"]`);if(meta)meta.content=value;
   }
-  window.setTimeout(() => { status.textContent = ""; }, 2600);
-}
+  $('#copyStatus').textContent='';$('#manualCopy').hidden=true;
+  $('#analyticsStatus').textContent=t(analyticsState);
+  updateMotionLabel();updateMenuLabel();filterWork(false);renderDemo();renderStep();
+ }
+ function filterWork(announce=true){
+  let count=0;
+  $$('[data-work]').forEach((el,i)=>{el.hidden=activeFilter!=='all'&&!workItems[i].tags.includes(activeFilter);if(!el.hidden)count++;});
+  $$('.filter-chip').forEach(el=>{const on=el.dataset.filter===activeFilter;el.classList.toggle('is-active',on);el.setAttribute('aria-pressed',String(on));});
+  $$('.orbit-label').forEach(el=>{const on=el.dataset.topic===activeFilter;el.classList.toggle('is-active',on);if(on)el.setAttribute('aria-current','true');else el.removeAttribute('aria-current');});
+  $('#filterCount').textContent=`${count} ${t(activeFilter==='all'?'allCount':'workCount')}`;
+  if(announce && motion) $('#workGrid').animate([{opacity:.45,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'});
+ }
+ $('#languageSwitch').addEventListener('click',event=>{
+  if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+  event.preventDefault();lang=lang==='zh'?'en':'zh';refreshLanguage();writeURL();
+ });
+ $$('.filter-chip').forEach(el=>el.addEventListener('click',()=>{activeFilter=el.dataset.filter;filterWork();writeURL();}));
+ $$('.orbit-label').forEach(el=>el.addEventListener('click',event=>{
+  if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+  event.preventDefault();activeFilter=el.dataset.topic;filterWork();writeURL();
+  $('#work').scrollIntoView({behavior:motion?'smooth':'instant'});$('#workTitle').focus({preventScroll:true});
+ }));
+ addEventListener('popstate',()=>{
+  const url=new URL(location.href);lang=url.searchParams.get('lang')==='en'?'en':'zh';
+  activeFilter=url.searchParams.get('topic');if(!Object.hasOwn(topics,activeFilter))activeFilter='all';refreshLanguage();
+ });
 
-document.getElementById("copyShare").addEventListener("click", copyShareText);
+ function updateMenuLabel(){const open=$('#menuButton').getAttribute('aria-expanded')==='true';$('#menuButton .sr-only').textContent=t(open?'closeMenu':'openMenu');}
+ function closeMenu(returnFocus=false){$('#mobileNav').hidden=true;$('#menuButton').setAttribute('aria-expanded','false');updateMenuLabel();if(returnFocus)$('#menuButton').focus();}
+ $('#menuButton').addEventListener('click',()=>{const open=$('#mobileNav').hidden;$('#mobileNav').hidden=!open;$('#menuButton').setAttribute('aria-expanded',String(open));updateMenuLabel();});
+ $$('#mobileNav a').forEach(el=>el.addEventListener('click',()=>closeMenu()));
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!$('#mobileNav').hidden)closeMenu(true);});
+ document.addEventListener('click',event=>{if(!event.target.closest('.site-header'))closeMenu();});
+ matchMedia('(min-width: 1101px)').addEventListener('change',event=>{if(event.matches)closeMenu();});
 
-document.getElementById("nativeShare").addEventListener("click", async () => {
-  const text = document.getElementById("shareText").textContent.trim();
-  if (navigator.share) {
-    try {
-      await navigator.share({ title: document.title, text, url: window.location.href });
-      return;
-    } catch (error) {
-      if (error.name === "AbortError") return;
-    }
+ async function copy(text,key){
+  $('#manualCopy').hidden=true;
+  try{await navigator.clipboard.writeText(text);$('#copyStatus').textContent=t(key);}
+  catch{const area=$('#manualText');area.value=text;$('#manualCopy').hidden=false;area.focus();area.select();$('#copyStatus').textContent=t('copyManual');}
+ }
+ $('#copyShare').addEventListener('click',()=>copy($('#shareText').textContent.trim(),'copied'));
+ $('#copyLink').addEventListener('click',()=>copy(shareURL(),'copiedLink'));
+ $('#nativeShare').addEventListener('click',async()=>{
+  const payload={title:document.title,text:$('#shareText').textContent.trim(),url:shareURL()};
+  if(navigator.share){try{await navigator.share(payload);return;}catch(error){if(error.name==='AbortError')return;}}
+  await copy(`${payload.text}\n\n${payload.url}`,'copiedShare');
+ });
+
+ function later(fn,delay){const id=setTimeout(()=>{timers.delete(id);fn();},delay);timers.add(id);return id;}
+ function cancelDemo(){demoRun++;timers.forEach(clearTimeout);timers.clear();}
+ function renderDemo(){
+  $('#demoStatus').textContent=t(demoStage);$('#demoBoard').dataset.state=demoResult;
+  const action=$('#demoBoard').dataset.action;
+  $('#requestLabel').textContent=t(action==='calendar'?'demoRead':action==='payment'?'demoPay':'request');
+  $('#gateStatus').textContent=t(demoResult==='allowed'?'gateAllow':demoResult==='blocked'?'gateDeny':demoResult==='checking'?'gateCheck':'gateReady');
+ }
+ function runDemo(action){
+  cancelDemo();const id=demoRun;
+  $('#requestLabel').textContent=t(action==='calendar'?'demoRead':'demoPay');
+  $('#demoBoard').dataset.action=action;
+  const finish=()=>{if(id!==demoRun)return;demoResult=action==='calendar'?'allowed':'blocked';demoStage=action==='calendar'?'demoAllowed':'demoBlocked';renderDemo();};
+  if(!motion){finish();return;}
+  demoResult='checking';demoStage='demoIdentity';renderDemo();
+  later(()=>{if(id===demoRun){demoStage='demoChecking';renderDemo();}},750);
+  later(finish,1900);
+ }
+ $('#demoRead').addEventListener('click',()=>runDemo('calendar'));
+ $('#demoPay').addEventListener('click',()=>runDemo('payment'));
+
+ function stopProcess(){clearInterval(processTimer);processTimer=null;$('#processPlay').textContent=t('processPlay');}
+ function renderStep(){
+  $$('.process-step').forEach((el,i)=>{el.classList.toggle('is-current',i===step);el.classList.toggle('is-done',i<step);const b=el.querySelector('button');if(i===step)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});
+  $('#processStatus').textContent=step<0?t('processHint'):`${String(step+1).padStart(2,'0')} / 06 · ${t('step'+(step+1)+'Title')}`;
+  $('#processPlay').textContent=t(processTimer?'processPause':'processPlay');
+ }
+ $$('.process-step button').forEach((el,i)=>el.addEventListener('click',()=>{stopProcess();step=i;renderStep();}));
+ $('#processPlay').addEventListener('click',()=>{
+  if(processTimer){stopProcess();return;}
+  if(!motion){step=(step+1)%6;renderStep();return;}
+  if(step<0||step===5)step=0;renderStep();
+  processTimer=setInterval(()=>{step++;if(step>=5){step=5;stopProcess();}renderStep();},1800);renderStep();
+ });
+ $('#processReset').addEventListener('click',()=>{stopProcess();step=-1;renderStep();});
+
+ function updateMotionLabel(){root.dataset.motion=motion?'on':'off';$('#motionToggle').textContent=t(motion?'motionPause':'motionResume');$('#motionToggle').setAttribute('aria-pressed',String(motion));}
+ function setMotion(value){motion=value;safeStore.set('sg17-motion',value?'on':'off');updateMotionLabel();if(!value){stopProcess();cancelDemo();if(demoResult==='checking'){demoResult='idle';demoStage='demoIdle';renderDemo();}}}
+ $('#motionToggle').addEventListener('click',()=>setMotion(!motion));
+ matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',event=>{if(event.matches)setMotion(false);});
+ document.addEventListener('visibilitychange',()=>{root.classList.toggle('tab-hidden',document.hidden);if(document.hidden){stopProcess();cancelDemo();if(demoResult==='checking'){demoResult='idle';demoStage='demoIdle';renderDemo();}}});
+ if('IntersectionObserver' in window){
+  const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('revealed');reveal.unobserve(entry.target);}}),{threshold:.08});
+  $$('.section-heading,.working-parties,.analogy-panel,.visitor-panel').forEach(el=>reveal.observe(el));
+ }
+ let scrollPending=false;
+ function updateScroll(){
+  scrollPending=false;const max=document.documentElement.scrollHeight-innerHeight;
+  $('#readingProgress').style.transform=`scaleX(${max>0?scrollY/max:0})`;
+  let current='';$$('main > section[id]').forEach(el=>{if(el.getBoundingClientRect().top<=160)current=el.id;});
+  $$('.top-nav a,.mobile-nav a').forEach(el=>{if(el.hash==='#'+current)el.setAttribute('aria-current','location');else el.removeAttribute('aria-current');});
+ }
+ addEventListener('scroll',()=>{if(!scrollPending){scrollPending=true;requestAnimationFrame(updateScroll);}},{passive:true});
+ addEventListener('resize',updateScroll);
+
+ // Real, server-backed page UV/PV. Both languages use ONE canonical page key.
+ // The original service is soxft/busuanzi, not busuanzi.cc or the older ibruce service.
+ // No network requests in previews. No random/local fake visitor counters.
+ async function loadAnalytics(){
+  if(location.hostname!=='oneman233.github.io'||!location.pathname.startsWith('/sg17/')){
+   analyticsState='analyticsPreview';$('#analyticsStatus').textContent=t(analyticsState);return;
   }
-  await copyShareText();
-});
-
-applyLanguage(currentLanguage);
+  const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),8000);
+  try{
+   const headers={'x-bsz-referer':'https://oneman233.github.io/sg17/'};
+   const identity=safeStore.get('sg17-bsz-id');if(identity)headers.Authorization=`Bearer ${identity}`;
+   const response=await fetch('https://busuanzi.9420.ltd/api',{method:'POST',headers,signal:controller.signal,credentials:'omit',referrerPolicy:'no-referrer'});
+   if(!response.ok)throw new Error('Statistics HTTP error');
+   const result=await response.json();
+   if(result.success!==true||!Number.isSafeInteger(result.data?.page_uv)||!Number.isSafeInteger(result.data?.page_pv)||result.data.page_uv<0||result.data.page_pv<0)throw new Error('Invalid statistics');
+   const identityNew=response.headers.get('Set-Bsz-Identity');if(identityNew)safeStore.set('sg17-bsz-id',identityNew);
+   $('#visitorCount').textContent=result.data.page_uv.toLocaleString();$('#viewCount').textContent=result.data.page_pv.toLocaleString();
+   analyticsState='analyticsReady';
+  }catch{analyticsState='analyticsError';}
+  finally{clearTimeout(timeout);$('#analyticsStatus').textContent=t(analyticsState);}
+ }
+ refreshLanguage();writeURL(true);updateScroll();loadAnalytics();
+})();
