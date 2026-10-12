@@ -28,6 +28,8 @@ navigation:
     url: /about
   - name: SG17科普
     url: /sg17/
+  - name: FGTIDA科普
+    url: /fg-tida/
 
 # 修改markdown引擎
 markdown: kramdown
