@@ -1,6 +1,6 @@
 # FG-TIDA 宣传介绍页
 
-一套可直接部署到 GitHub Pages 的静态网页。默认中文，右上角可切换英文。无需 Node.js、npm、数据库或构建流程，也不依赖在线字体、CDN 或第三方图片。
+一套可直接部署到 GitHub Pages 的静态网页。每次打开默认英语，右上角可切换中文。无需 Node.js、npm、数据库或构建流程，也不依赖在线字体、CDN 或第三方图片。
 
 ## 文件
 
@@ -67,10 +67,10 @@ https://oneman233.github.io/sg17/tida/
 
 ## 修改内容
 
-双语内容使用 `data-zh` 与 `data-en` 保存。修改时，请同步修改这两个属性和元素中的默认中文文字。例如：
+双语内容使用 `data-zh` 与 `data-en` 保存。修改时，请同步修改这两个属性和元素中的默认英文文字。例如：
 
 ```html
-<span data-zh="参与协作" data-en="Get involved">参与协作</span>
+<span data-zh="参与协作" data-en="Get involved">Get involved</span>
 ```
 
 - 配色：修改 `styles.css` 顶部的 `:root` 变量。
@@ -78,7 +78,7 @@ https://oneman233.github.io/sg17/tida/
 - 演示文案与规则：修改 `script.js` 中的 `copy`、`price` 和 `updateDecision()`。
 - 页脚核对日期：更新内容后同步修改中英文日期。
 
-语言偏好仅保存在访问者自己的浏览器中。页面没有统计脚本，没有远程数据请求，也不提交机票或支付操作。
+页面每次加载都以英语显示；手动切换中文仅影响当前页面，不保存语言偏好。页面没有统计脚本，没有远程数据请求，也不提交机票或支付操作。
 
 ## 内容依据与页面定位
 

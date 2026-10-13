@@ -22,7 +22,7 @@
       description: 'Explore FG-TIDA: trust and identity for humans and agentic AI. Understand identity, authority and inspectable action, and join open collaboration.'
     }
   };
-  let language = 'zh';
+  let language = 'en';
   const money = value => '¥' + Number(value).toLocaleString('en-US');
   const price = 2600;
   function updateDecision() {
@@ -55,7 +55,6 @@
     document.title = copy[language].title;
     document.querySelector('meta[name="description"]').content = copy[language].description;
     updateDecision();
-    try { localStorage.setItem('fg-tida-language', language); } catch (_) { /* storage optional */ }
   }
   $('language-toggle').addEventListener('click', () => setLanguage(language === 'zh' ? 'en' : 'zh'));
   const nav = $('site-nav');
@@ -90,9 +89,8 @@
       updateDecision();
     });
   });
-  let stored = 'zh';
-  try { stored = localStorage.getItem('fg-tida-language') || 'zh'; } catch (_) { /* file:// and privacy modes supported */ }
-  setLanguage(stored);
+  // Open in English on every visit; the toggle changes this page's language.
+  setLanguage('en');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !reduced) {
     const targets = document.querySelectorAll('.section-heading, .why-grid, .explore-layout, .lab-panel, .resource-row, .join-grid, .faq-grid');
@@ -105,3 +103,4 @@
     targets.forEach(node => { node.classList.add('reveal'); observer.observe(node); });
   }
 })();
+
